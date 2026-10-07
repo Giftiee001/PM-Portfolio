@@ -53,6 +53,7 @@ export type Project = {
   productArea: string;
   skills: string[];
   github?: string;
+  liveUrl?: string;
   status: "live" | "coming-soon";
   caseStudy?: CaseStudySection[];
 };
@@ -67,14 +68,51 @@ export const projects: Project[] = [
     productArea: "Safety & Access",
     skills: ["Problem Framing", "Product Discovery", "PRDs", "Prioritization", "UI Build"],
     github: "https://github.com/Giftiee001/SafeHer-web-app.git",
+    liveUrl: "https://safeher-web.netlify.app/",
     status: "live",
     caseStudy: [
-      { id: "context", label: "01", heading: "Context & Overview", body: ["[ADD CONTEXT: what prompted this project, who it's for, and what \"done\" looked like]"] },
-      { id: "problem", label: "02", heading: "Problem Statement", body: ["[ADD PROBLEM VALIDATION: the specific problem SafeHer addresses and why it matters]"] },
-      { id: "research", label: "03", heading: "User Research & Insights", body: ["[ADD USER RESEARCH DETAILS: what you learned]"] },
-      { id: "ideation", label: "04", heading: "Ideation & Prioritization", body: ["[ADD PRIORITIZATION FRAMEWORK: how you decided what to build]"] },
-      { id: "solution", label: "05", heading: "Solution & Product Artifacts", body: ["[ADD FIGMA / UI ARTIFACTS: screenshots, flows, PRD excerpts]"] },
-      { id: "metrics", label: "06", heading: "Metrics, Learnings & Next Steps", body: ["[ADD SUCCESS METRICS and what you learned]"] },
+      {
+        id: "context",
+        label: "01",
+        heading: "Context & Overview",
+        body: [
+          "I built SafeHer because I'm passionate about women's empowerment. Women and girls often don't feel safe, and I wanted to build something practical to help.",
+          "The idea started as a location-sharing app, and grew into a broader safety toolkit as I kept building. SafeHer is still a work in progress.",
+        ],
+      },
+      {
+        id: "problem",
+        label: "02",
+        heading: "Problem Statement",
+        body: [
+          "Women and girls frequently face safety concerns, especially when moving around alone, and often lack a simple way to let trusted people know where they are or get help quickly.",
+        ],
+      },
+      {
+        id: "research",
+        label: "03",
+        heading: "User Research & Insights",
+        body: [
+          "[ADD USER RESEARCH DETAILS: any conversations, observations, or personal experiences that shaped this problem for you]",
+        ],
+      },
+      {
+        id: "solution",
+        label: "04",
+        heading: "Solution & What's Built",
+        body: [
+          "Starting from the original location-sharing idea, SafeHer has grown into: account creation and login, a home screen with live location awareness, a press-and-hold SOS emergency alert button, an emergency contacts manager (add a contact's name, phone number, and relationship), a healthcare directory, a profile screen, and settings for auto-sharing location during an emergency, background location access, and notifications.",
+        ],
+      },
+      {
+        id: "metrics",
+        label: "05",
+        heading: "Learnings & Next Steps",
+        body: [
+          "SafeHer is still in progress.",
+          "[ADD WHAT YOU'VE LEARNED so far, and what you plan to improve or add next]",
+        ],
+      },
     ],
   },
   {
@@ -146,6 +184,85 @@ export const projects: Project[] = [
         body: [
           "Success will be measured through: number of young people reached via workshops and online activities, social media reach and engagement, and before and after questionnaire results showing change in understanding of consent.",
           "[ADD LEARNINGS AND NEXT STEPS: once the project wraps up, add what you learned and what you'd improve]",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "flatfund",
+    name: "FlatFund",
+    category: "Product Sprint Prototype",
+    description: "A single-screen prototype that helps three flatmates split a prepaid electricity bill, track who has paid, and unlock the meter token once everyone has paid.",
+    role: "Product Builder",
+    productArea: "Shared Living & Utilities",
+    skills: ["Problem Framing", "Stakeholder Trade-offs", "Rapid Prototyping", "Scope Definition"],
+    liveUrl: "https://flatfund.vercel.app/",
+    status: "live",
+    caseStudy: [
+      {
+        id: "context",
+        label: "01",
+        heading: "Context & Overview",
+        body: [
+          "FlatFund is a prototype I built for a product sprint assignment, using Lovable. It is a shared-flat utility tracker designed for one specific, simple use case: buying prepaid electricity meter units in a 3-person flat.",
+          "The problem and stakeholder scenario were provided by my mentor as a sprint brief. I built the prototype to that brief.",
+        ],
+      },
+      {
+        id: "problem",
+        label: "02",
+        heading: "Problem Statement",
+        body: [
+          "In a 3-person flat, one person pays for the monthly power units, and roommates forget whether they have sent their share or what the recharge token is.",
+        ],
+      },
+      {
+        id: "tradeoffs",
+        label: "03",
+        heading: "Stakeholder Input & Trade-offs",
+        body: [
+          "The brief gave three stakeholder positions to weigh.",
+          "Engineering Lead: keep storage strictly local, so when one flatmate opens the link, the paid/unpaid status persists on their device.",
+          "Design Lead: show three prominent cards, one per roommate, where clicking a card toggles a status badge between Owing and Paid.",
+          "Growth/Data Lead: add an automated SMS trigger button that costs $0.05 per text to notify the owing flatmate.",
+          "My decisions: I built all three requests, with one change. Following the Engineering Lead, all data is stored locally on the device, so the paid/unpaid status persists without a backend. Following the Design Lead, each flatmate has a prominent card that toggles between Pending and Paid.",
+          "For the Growth/Data Lead's SMS request, I built a simulated Remind popup instead of a real text, because real SMS would cost about $0.05 per message and a prototype doesn't need that cost.",
+          "I also added a few things the brief didn't ask for: a bill input that accepts any amount, real flatmate names, a reset, and input validation.",
+        ],
+      },
+      {
+        id: "solution",
+        label: "04",
+        heading: "Solution & Prototype Flow",
+        body: [
+          "The prototype is a single screen.",
+          "1. Input: the target monthly bill amount (for example, NGN 15,000 for electricity).",
+          "2. Interface: three flatmate cards, each showing that person's calculated share (NGN 5,000 each).",
+          "3. Interaction: clicking a member's card switches their status from Pending to Paid. Once all three are marked Paid, the screen unmasks the 20-digit prepaid meter token.",
+          "[ADD SCREENSHOTS or confirm that the live prototype matches this flow]",
+        ],
+      },
+      {
+        id: "learnings",
+        label: "05",
+        heading: "Learnings & Next Steps",
+        body: [
+          "What I learned from building and scoping FlatFund",
+          "1. The prompt decides the result, so specific prompts win. My first Lovable build looked right but pre-filled the bill with 15,000 and didn't update the cards until Save. Writing rules like start empty, update live, and strip non-numeric characters fixed it. Each follow-up prompt changed one thing and said do not change anything else, which stopped the tool from breaking features that already worked.",
+          "2. Screenshots find problems that reading the code can't. Testing step by step caught a visible token in the input field, a setup section so tall that the cards sat below the fold, and a Remind message that asked for NGN 0 when the bill was empty.",
+          "3. Each stakeholder's request pulled in a different direction, and I resolved them separately.",
+          "Engineering Lead (local storage only): done, but statuses don't sync between flatmates' phones.",
+          "Design Lead (three cards with a toggle): done, but I used Pending instead of Owing to match the prototype flow.",
+          "Growth Lead (SMS at about $0.05 per text): I built a simulated reminder with a copy button and a cost note, because a real SMS integration needs a backend and a paid provider.",
+          "4. Paid is a trust-based tap. The app can't verify a transfer, and the person who types in the token can see it. For a group of flatmates this is acceptable, but it limits the product.",
+          "5. Shipping has its own problems. My first deployed link returned Unauthorized because the deployment wasn't public. I only found out by testing in an Incognito window, and it was fixed by making it public.",
+          "What I would improve next",
+          "Sync between phones: add a small backend (for example Firebase or Supabase) with a shared flat code, so everyone sees the same statuses. This is the biggest gap.",
+          "A buyer role: only the buyer can mark others as Paid, and the token is hidden from everyone else until all three have paid.",
+          "Safer token storage: it currently sits in the browser's local storage as plain text, so it should be stored server-side, or at least encrypted.",
+          "Real payment confirmation: use a payment provider or a bank-transfer webhook to confirm payments instead of a manual tap.",
+          "Real SMS with a cost cap: send through a provider, with a monthly limit so the $0.05 per text doesn't add up.",
+          "More flexibility: a variable number of flatmates, unequal shares, and a history of past months.",
         ],
       },
     ],
