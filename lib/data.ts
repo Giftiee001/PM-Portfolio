@@ -28,7 +28,7 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Metrics",
     description: "How I think about whether a product decision actually worked.",
-    skills: ["Product KPIs", "North Star Metrics", "AARRR Funnel", "Success Metrics", "Leading & Lagging Indicators"],
+    skills: ["Product KPIs", "Success Metrics", "North Star Metrics"],
   },
   {
     title: "Tools",
@@ -42,6 +42,7 @@ export type CaseStudySection = {
   label: string;
   heading: string;
   body: string[];
+  image?: { src: string; alt: string };
 };
 
 export type Project = {
@@ -91,9 +92,11 @@ export const projects: Project[] = [
       {
         id: "research",
         label: "03",
-        heading: "User Research & Insights",
+        heading: "User Research & Problem Discovery",
         body: [
-          "[ADD USER RESEARCH DETAILS: any conversations, observations, or personal experiences that shaped this problem for you]",
+          "The idea for SafeHer was inspired by the safety concerns women face in their everyday lives. Women may experience harassment, feel unsafe while travelling alone, or struggle to find reliable support when they need help. These concerns made me think about how technology could help women access safety resources and support more easily.",
+          "As I developed the idea, I considered the challenges women might face when trying to seek help, access relevant information, or find support in uncomfortable or potentially dangerous situations. This led me to explore how a web application could make safety resources more accessible and provide women with a platform designed around their needs.",
+          "SafeHer was developed as a school project, to explore how technology could contribute to women's safety and empowerment.",
         ],
       },
       {
@@ -109,94 +112,24 @@ export const projects: Project[] = [
         label: "05",
         heading: "Learnings & Next Steps",
         body: [
-          "SafeHer is still in progress.",
-          "[ADD WHAT YOU'VE LEARNED so far, and what you plan to improve or add next]",
+          "What I've learned",
+          "Working on SafeHer has helped me understand the importance of designing products that address real problems and put users' needs first. Although I have already built the initial version of the web app, I recognize that there is still room for improvement.",
+          "What's next",
+          "My next step is to review the existing features, improve the user interface and overall user experience, and identify areas where the product can be more useful and accessible to women. I also want to gather feedback from potential users to understand what works well, what needs improvement, and what additional features would make SafeHer more valuable.",
+          "Rather than adding features without a clear purpose, I want to focus on making the existing product better, validating my assumptions through user research, and prioritizing improvements based on users' needs.",
         ],
       },
     ],
   },
   {
-    slug: "consent-starts-with-us",
-    name: "Consent Starts With Us",
-    category: "Youth Advocacy Project",
-    description: "A youth-led awareness and education project helping young people understand consent, respect boundaries, and build healthy relationships to help prevent sexual and gender-based violence.",
-    role: "Project Lead",
-    productArea: "Advocacy, Education and GBV Prevention",
-    skills: ["Problem Framing", "Stakeholder Mapping", "SMART Goal Setting", "Risk Planning", "Evaluation Design"],
-    status: "live",
-    caseStudy: [
-      {
-        id: "context",
-        label: "01",
-        heading: "Context & Overview",
-        body: [
-          "Consent Starts With Us is a youth-led project I designed as part of the GCED Online Campus course From Awareness to Action, running over one month starting August 2026.",
-          "The project focuses on consent education and prevention of sexual and gender-based violence among young people.",
-        ],
-      },
-      {
-        id: "problem",
-        label: "02",
-        heading: "Problem Statement",
-        body: [
-          "Many young people lack a clear understanding of consent, personal boundaries, and healthy relationships, a gap that contributes to sexual and gender-based violence in communities.",
-        ],
-      },
-      {
-        id: "research",
-        label: "03",
-        heading: "Research & Insights",
-        body: [
-          "[ADD RESEARCH DETAILS: any conversations, observations, or reading that shaped how you defined this problem]",
-        ],
-      },
-      {
-        id: "prioritization",
-        label: "04",
-        heading: "Goals, Objectives & Planning",
-        body: [
-          "Goal: to empower young people with the knowledge and confidence to understand consent, respect boundaries, challenge harmful attitudes, and contribute to preventing sexual and gender-based violence in their communities.",
-          "Specific: organize two interactive consent education sessions focused on consent, boundaries, healthy relationships, and prevention of sexual violence.",
-          "Measurable: reach at least 100 young people through workshops and online awareness activities during the project period.",
-          "Achievable: work with youth organizations, schools, universities, women's rights organizations, and community advocates.",
-          "Realistic: use existing community spaces and social media platforms to keep the project affordable and accessible.",
-          "Time-bound: implement over one month, including planning, educational sessions, social media activities, feedback collection, and evaluation.",
-        ],
-      },
-      {
-        id: "solution",
-        label: "05",
-        heading: "Activities & Execution",
-        body: [
-          "1. Planning and preparation: identify target participants and partners, develop the timeline and materials.",
-          "2. Develop awareness materials: educational content on consent, boundaries, healthy relationships, and prevention.",
-          "3. Launch the campaign: introduce Consent Starts With Us through social media and partner networks.",
-          "4. Conduct interactive education sessions: discuss what consent means, boundaries, communication, peer pressure, and healthy relationships.",
-          "5. Social media awareness campaign: educational posts, myth versus fact content, short videos, and key messages.",
-          "6. Collect feedback: a before and after questionnaire to measure changes in participants' knowledge.",
-          "7. Evaluate and share results: review participation and engagement, summarize lessons, and share findings with partners.",
-        ],
-      },
-      {
-        id: "metrics",
-        label: "06",
-        heading: "Metrics, Learnings & Next Steps",
-        body: [
-          "Success will be measured through: number of young people reached via workshops and online activities, social media reach and engagement, and before and after questionnaire results showing change in understanding of consent.",
-          "[ADD LEARNINGS AND NEXT STEPS: once the project wraps up, add what you learned and what you'd improve]",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "flatfund",
-    name: "FlatFund",
+    slug: "billbell",
+    name: "BillBell",
     category: "Product Sprint Prototype",
-    description: "A single-screen prototype that helps three flatmates split a prepaid electricity bill, track who has paid, and unlock the meter token once everyone has paid.",
-    role: "Product Builder",
-    productArea: "Shared Living & Utilities",
+    description: "A free-trial tracker that helps users cancel before they are charged for a subscription they forgot about.",
+    role: "Product Lead & Builder",
+    productArea: "Subscriptions & Personal Finance",
     skills: ["Problem Framing", "Stakeholder Trade-offs", "Rapid Prototyping", "Scope Definition"],
-    liveUrl: "https://flatfund.vercel.app/",
+    liveUrl: "https://billbell-snowy.vercel.app",
     status: "live",
     caseStudy: [
       {
@@ -204,8 +137,9 @@ export const projects: Project[] = [
         label: "01",
         heading: "Context & Overview",
         body: [
-          "FlatFund is a prototype I built for a product sprint assignment, using Lovable. It is a shared-flat utility tracker designed for one specific, simple use case: buying prepaid electricity meter units in a 3-person flat.",
-          "The problem and stakeholder scenario were provided by my mentor as a sprint brief. I built the prototype to that brief.",
+          "BillBell is a prototype I built for a product sprint assignment. It is a reminder tracker for recurring free trials and promo subscriptions, such as Canva, Netflix, and Apple TV.",
+          "The problem and stakeholder scenario were provided by my mentor as a sprint brief. The product was called FreeTrial Watchdog in the brief, and I renamed it BillBell.",
+          "Built with v0 (AI prototyping), Next.js, Tailwind, and localStorage. The login is a mock.",
         ],
       },
       {
@@ -213,7 +147,7 @@ export const projects: Project[] = [
         label: "02",
         heading: "Problem Statement",
         body: [
-          "In a 3-person flat, one person pays for the monthly power units, and roommates forget whether they have sent their share or what the recharge token is.",
+          "People sign up for 7-day or 30-day free software trials, forget to cancel 24 hours before the trial ends, and get charged the full recurring subscription price.",
         ],
       },
       {
@@ -222,12 +156,13 @@ export const projects: Project[] = [
         heading: "Stakeholder Input & Trade-offs",
         body: [
           "The brief gave three stakeholder positions to weigh.",
-          "Engineering Lead: keep storage strictly local, so when one flatmate opens the link, the paid/unpaid status persists on their device.",
-          "Design Lead: show three prominent cards, one per roommate, where clicking a card toggles a status badge between Owing and Paid.",
-          "Growth/Data Lead: add an automated SMS trigger button that costs $0.05 per text to notify the owing flatmate.",
-          "My decisions: I built all three requests, with one change. Following the Engineering Lead, all data is stored locally on the device, so the paid/unpaid status persists without a backend. Following the Design Lead, each flatmate has a prominent card that toggles between Pending and Paid.",
-          "For the Growth/Data Lead's SMS request, I built a simulated Remind popup instead of a real text, because real SMS would cost about $0.05 per message and a prototype doesn't need that cost.",
-          "I also added a few things the brief didn't ask for: a bill input that accepts any amount, real flatmate names, a reset, and input validation.",
+          "Engineering Lead: build direct browser calendar integrations (.ics download buttons), so users can save the reminder straight to Google or Apple Calendar without the team managing email servers.",
+          "Design Lead: make the countdown visual, with a clean urgency card using color codes (Green = Safe, Orange = 2 Days Left, Red = Cancel Today) and a direct link to the platform's cancellation page.",
+          "Growth/Data Lead: require users to enter their debit card's last 4 digits, so the app can remind them which card will be debited.",
+          "My decisions:",
+          "Calendar (Engineering Lead): I used Google Calendar links and .ics downloads, with no email server needed.",
+          "Countdown (Design Lead): I built green, orange, red, and gray states with text badges.",
+          "Card digits (Growth/Data Lead): I made the last 4 digits optional instead of forced, because demanding card data on a free tool would hurt sign-ups and trust.",
         ],
       },
       {
@@ -235,57 +170,30 @@ export const projects: Project[] = [
         label: "04",
         heading: "Solution & Prototype Flow",
         body: [
-          "The prototype is a single screen.",
-          "1. Input: the target monthly bill amount (for example, NGN 15,000 for electricity).",
-          "2. Interface: three flatmate cards, each showing that person's calculated share (NGN 5,000 each).",
-          "3. Interaction: clicking a member's card switches their status from Pending to Paid. Once all three are marked Paid, the screen unmasks the 20-digit prepaid meter token.",
-          "[ADD SCREENSHOTS or confirm that the live prototype matches this flow]",
+          "After a mock sign-in, the app opens a single-screen tracker.",
+          "Sign-in: the login is a mock. It accepts any valid email and a password of 6 or more characters, with no real account behind it. The user's email shows in the header next to Log out.",
+          "Track a new trial: a form with the service name, the trial end date (date picker), and an optional Add card reminder for the last 4 digits.",
+          "Live countdown cards: one card per trial, showing the service name and end date, the days left, a color-coded badge (green Safe at 3 or more days, orange 2 Days Left, red Cancel Today at 1 day or less, gray Trial Ended), and a progress bar showing how much of the trial has elapsed.",
+          "Actions on each card: Cancel Guide opens the service's cancellation page. Google Calendar opens a pre-filled all-day event on the day before the trial ends. Download .ics saves the same event as a calendar file that works in Outlook or Apple Calendar. Mark as Canceled turns the card green and says the user is safe, and Undo brings it back. A trash icon removes a card.",
+          "Demo data: three sample cards (Apple TV+, Canva, Netflix) always show red, orange, and green, because their dates are calculated from today. Trials are saved in the visitor's own browser, and Reset demo data in the footer restores the samples.",
         ],
+        image: {
+          src: "/billbell-tracker.png",
+          alt: "BillBell tracker screen with countdown cards for Apple TV+ (1 day left, red Cancel Today badge) and Canva (2 days left, orange badge), each with Cancel Guide, Google Calendar, Download .ics, and Mark as Canceled buttons",
+        },
       },
       {
         id: "learnings",
         label: "05",
         heading: "Learnings & Next Steps",
         body: [
-          "What I learned from building and scoping FlatFund",
-          "1. The prompt decides the result, so specific prompts win. My first Lovable build looked right but pre-filled the bill with 15,000 and didn't update the cards until Save. Writing rules like start empty, update live, and strip non-numeric characters fixed it. Each follow-up prompt changed one thing and said do not change anything else, which stopped the tool from breaking features that already worked.",
-          "2. Screenshots find problems that reading the code can't. Testing step by step caught a visible token in the input field, a setup section so tall that the cards sat below the fold, and a Remind message that asked for NGN 0 when the bill was empty.",
-          "3. Each stakeholder's request pulled in a different direction, and I resolved them separately.",
-          "Engineering Lead (local storage only): done, but statuses don't sync between flatmates' phones.",
-          "Design Lead (three cards with a toggle): done, but I used Pending instead of Owing to match the prototype flow.",
-          "Growth Lead (SMS at about $0.05 per text): I built a simulated reminder with a copy button and a cost note, because a real SMS integration needs a backend and a paid provider.",
-          "4. Paid is a trust-based tap. The app can't verify a transfer, and the person who types in the token can see it. For a group of flatmates this is acceptable, but it limits the product.",
-          "5. Shipping has its own problems. My first deployed link returned Unauthorized because the deployment wasn't public. I only found out by testing in an Incognito window, and it was fixed by making it public.",
+          "What I learned",
+          "Small, specific prompts worked better than big ones. I also tested every 'fixed' claim from the AI myself, including calendar dates in Google Calendar and Outlook, before shipping.",
           "What I would improve next",
-          "Sync between phones: add a small backend (for example Firebase or Supabase) with a shared flat code, so everyone sees the same statuses. This is the biggest gap.",
-          "A buyer role: only the buyer can mark others as Paid, and the token is hidden from everyone else until all three have paid.",
-          "Safer token storage: it currently sits in the browser's local storage as plain text, so it should be stored server-side, or at least encrypted.",
-          "Real payment confirmation: use a payment provider or a bank-transfer webhook to confirm payments instead of a manual tap.",
-          "Real SMS with a cost cap: send through a provider, with a monthly limit so the $0.05 per text doesn't add up.",
-          "More flexibility: a variable number of flatmates, unequal shares, and a history of past months.",
+          "Add real accounts with Firebase Auth, send push or email reminders before a trial ends, and test with five real users.",
         ],
       },
     ],
-  },
-  {
-    slug: "case-study-2",
-    name: "Product Improvement Case Study",
-    category: "Case Study 02",
-    description: "A teardown-and-rebuild exercise on an existing product's experience.",
-    role: "[ADD ROLE]",
-    productArea: "[ADD PRODUCT AREA]",
-    skills: [],
-    status: "coming-soon",
-  },
-  {
-    slug: "case-study-3",
-    name: "Product Strategy Case",
-    category: "Case Study 03",
-    description: "A strategic case exploring positioning, sequencing, and trade-offs.",
-    role: "[ADD ROLE]",
-    productArea: "[ADD PRODUCT AREA]",
-    skills: [],
-    status: "coming-soon",
   },
 ];
 

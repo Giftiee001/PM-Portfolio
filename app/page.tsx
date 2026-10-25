@@ -14,8 +14,8 @@ export default function Home() {
       <section className="mx-auto max-w-wide px-6 py-16 md:px-10">
         <SectionHeading index="01" title="About" />
         <div className="mt-6 max-w-content space-y-4 text-ink-soft">
-          <p>I&apos;m an early-career Product Manager building my foundation in product discovery, user research, product strategy, and execution.</p>
-          <p>My interest in Product Management comes from enjoying the process of understanding why a problem exists and thinking through how a product can solve it.</p>
+          <p>I&apos;m learning product management through formal training and hands-on projects, with a focus on discovery, user research, strategy, and execution.</p>
+          <p>What draws me to the work is understanding why a problem exists, then thinking through how a product can solve it.</p>
           <Link href="/about" className="inline-flex items-center gap-1.5 text-sm font-medium text-pine">
             More about my approach <ArrowRight className="h-4 w-4" />
           </Link>
@@ -32,7 +32,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-wide px-6 py-16 md:px-10">
-        <SectionHeading index="03" title="Featured projects" description="Case studies showing how I approach a problem end to end." />
+        <SectionHeading index="03" title="Featured projects" description="Work that shows how I take a problem from framing to a built solution." />
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {projects.map((p) => <ProjectCard key={p.slug} project={p} />)}
         </div>

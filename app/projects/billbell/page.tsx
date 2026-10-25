@@ -1,10 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import CTA from "@/components/CTA";
 import { projects } from "@/lib/data";
 
-export default function ConsentStartsWithUsCaseStudy() {
-  const project = projects.find((p) => p.slug === "consent-starts-with-us")!;
+export default function BillBellCaseStudy() {
+  const project = projects.find((p) => p.slug === "billbell")!;
   return (
     <>
       <section className="border-b border-line">
@@ -15,6 +16,16 @@ export default function ConsentStartsWithUsCaseStudy() {
           <p style={{ fontFamily: "var(--font-mono)" }} className="mt-8 text-xs uppercase text-gold">{project.category}</p>
           <h1 style={{ fontFamily: "var(--font-display)" }} className="mt-3 text-4xl text-ink md:text-5xl">{project.name}</h1>
           <p className="mt-5 max-w-2xl text-lg text-ink-soft">{project.description}</p>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-sm bg-ink px-5 py-3 text-sm text-paper hover:bg-pine"
+            >
+              View live prototype <ArrowUpRight className="h-4 w-4" />
+            </a>
+          )}
         </div>
       </section>
       <section className="mx-auto max-w-wide px-6 py-16 md:px-10">
@@ -40,6 +51,16 @@ export default function ConsentStartsWithUsCaseStudy() {
                   </p>
                 );
               })}
+              {s.image && (
+                <Image
+                  src={s.image.src}
+                  alt={s.image.alt}
+                  width={0}
+                  height={0}
+                  sizes="(min-width: 768px) 42rem, 100vw"
+                  className="mt-6 h-auto w-full rounded-sm border border-line"
+                />
+              )}
             </div>
           ))}
         </div>
